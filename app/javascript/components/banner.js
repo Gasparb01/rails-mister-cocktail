@@ -20,7 +20,7 @@ const loadDynamicBannerText2 = () => {
 export { loadDynamicBannerText2 };
 const loadDynamicBannerText3 = () => {
   new Typed('#banner-typed-text3', {
-    strings: ["Lets get drunk and tell each other everything were affraid to say sober.", "WELCOME TO THE BAR"],
+    strings: ["Lets get drunk and tell each other everything, were affraid to say sober.", "WELCOME TO THE BAR"],
     typeSpeed: 50,
     loop: true
   });
