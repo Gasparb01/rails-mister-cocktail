@@ -1,0 +1,16 @@
+<h1 class="mt-5 text-center">Cocktails</h1>
+<div id="restaurants-list" class="container mt-5 text-center">
+  <% @cocktails.each do |cocktail| %>
+  <div class="card-of-cocktails">
+   <h2><p><%= cocktail.name %></p></h2>
+    <%= link_to ("see details"), cocktail_path(cocktail) %>
+    <%= link_to content_tag(:i, "", class: ["fas fa-trash"]), cocktails_path(@cocktail),
+    method: :delete,
+    data: { confirm: "Are you sure?" } %>
+  </div>
+  <% end %>
+  <div class="mt-5">
+    <%= link_to "New cocktail", new_cocktail_path, class: "btn btn-primary"  %>
+  </div>
+</div>
+
