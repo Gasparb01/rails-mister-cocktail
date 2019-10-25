@@ -16,3 +16,10 @@
 // const imagePath = (name) => images(name, true)
 import 'bootstrap';
 console.log('Hello World from Webpacker')
+import { loadDynamicBannerText } from '../components/banner';
+import { loadDynamicBannerText2 } from '../components/banner';
+import { loadDynamicBannerText3 } from '../components/banner';
+
+loadDynamicBannerText();
+loadDynamicBannerText2();
+loadDynamicBannerText3();
