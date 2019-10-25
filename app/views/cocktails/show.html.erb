@@ -1,19 +1,27 @@
-<div id="show-list" class="container mt-4 text-center">
-  <h1>This is <%= @cocktail.name %></h1>
-    <div id="show-div" class="container text-center mt-5">
-      <h1><%= @cocktail.name %></h1>
-      <%= cl_image_tag @cocktail.photo, height: 300, width: 400, crop: :fill %>
+<div class="container d-flex justify-content-center mt-5">
+<div class="card" style="width: 18rem;">
+    <%= cl_image_tag(@cocktail.photo, class: "card-img-top" ) %>
+  <div class="card-body">
+    <h5 class="card-title"><%= @cocktail.name.capitalize %></h5>
+<!--     <p class="card-text"><%= @dose.description %></p> -->
+   <%= link_to "Add doses", new_cocktail_dose_path(@cocktail), class: "btn btn-primary"   %>
+  </div>
+</div>
+</div>
 
-      <ul>
+<div id="show-list" class="container mt-4 text-center">
+  <div id="show-div" class="container text-center mt-5">
+    <ul>
       <% @cocktail.doses.each do |dose| %>
-      <li>Dose: <strong><%= dose.description %></strong></li>
+      <h4>Doses description</h4>
+      <li><strong><%= dose.description %></strong></li>
       <li>Ingredient: <strong><%= dose.ingredient.name %></strong></li>
       <%= link_to content_tag(:i, "", class: ["fas fa-trash"]), dose_path(dose),
-            method: :delete,
-            data: { confirm: "Are you sure?" } %>
+      method: :delete,
+      data: { confirm: "Are you sure?" } %>
       <% end %>
-       </ul>
-      <p><%= link_to "Add doses", new_cocktail_dose_path(@cocktail), class: "btn btn-primary"   %></p>
-      <p><%= link_to "back to list", cocktails_path, class: "btn btn-primary"  %></p>
-    </div>
+    </ul>
+    <p></p>
+    <p><%= link_to "back to list", cocktails_path, class: "btn btn-primary"  %></p>
+  </div>
 </div>
